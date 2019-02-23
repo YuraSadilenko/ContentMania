@@ -1,28 +1,54 @@
 .composition {
     position: relative;
 
+    @include respond(tab-port) {
+        display: none;
+    }
+
+
     &__photo {
-        width: 55%;
+        width: 25rem;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
         border-radius: 2px;
         position: absolute;
         z-index: 10;
         outline-offset: 1.5rem;
+        overflow: hidden;
         transition: all .2s;
+
+        @include respond(tab-land) {
+            width: 80%;
+        }
+
 
         &--p1 {
             left: 0;
             top: -2rem;
+
+            @include respond(tab-land) {
+                left: 3rem;
+                top: -2rem;
+            }
         }
 
         &--p2 {
             right: 0rem;
             top: 12rem;
+
+            @include respond(tab-land) {
+                left: 3rem;
+                top: 23rem;
+            }
         }
 
         &--p3 {
             left: 13rem;
             top: 5rem;
+            
+            @include respond(tab-land) {
+                left: 3rem;
+                top: 8rem;
+            }
         }
 
         &:hover {

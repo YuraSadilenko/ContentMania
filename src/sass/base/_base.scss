@@ -8,10 +8,25 @@
 
 
 html {
-    //Обозначение одного rem.
+    //1 rem = fon-size.
     font-size: 62.5%;
+
+    @include respond(tab-land) {
+        font-size: 58.5%;
+    }
+
+    @include respond(tab-port) {
+        font-size: 54%;
+    }
+    @include respond(phone) {
+        font-size: 58%;
+    }
 }
 
 body {
     box-sizing: border-box;
 }
+
+
+
+

@@ -4,6 +4,7 @@ var gulp = require("gulp"),
 	plumber = require("gulp-plumber"),
 	rename = require("gulp-rename");
 	autoprefixer = require("gulp-autoprefixer");
+	imagemin = require('gulp-imagemin');
 
 gulp.task("sass", function() {
   gulp
@@ -39,4 +40,10 @@ gulp.task("build", function() {
 	gulp.src(["src/img/*.*"]).pipe(gulp.dest("dist/img"));
 	gulp.src(["src/img/svg/*.*"]).pipe(gulp.dest("dist/img/svg"));
 	gulp.src("src/*.html").pipe(gulp.dest("dist"));
+});
+
+gulp.task('compress', function() {
+  gulp.src('src/img/*')
+  .pipe(imagemin())
+  .pipe(gulp.dest('dist/img'))
 });

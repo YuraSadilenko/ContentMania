@@ -10,18 +10,26 @@ body {
     text-transform: uppercase;
     backface-visibility: hidden;
     margin-bottom: 6rem;
-    
+    text-align: center;
+
     &--main {
         display: block;
         font-size: 6rem;
         font-weight: 400;
         letter-spacing: 3.5rem;
-    
         animation-name: moveInLeft;
         animation-duration: 1s;
         animation-timing-function: ease-in;
         animation-delay: 0.5s;
         animation-fill-mode: backwards;
+
+        @include respond(phone) {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+
+        }
+    
     }
     
     &--sub {
@@ -31,6 +39,12 @@ body {
         letter-spacing: 1.75rem;
         animation: moveInRight 1s ease-in 0.5s ;
         animation-fill-mode: backwards;
+
+        @include respond(phone) {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
     }
 }
 
@@ -43,8 +57,8 @@ body {
         -webkit-background-clip: text;
         color: transparent;
         letter-spacing: .2rem;
-        transition: all .5;
-        
+        transition: all .3s;
+
 
         &:hover {
             transform: skewY(-3deg) skewX(15deg) scale(1.05);

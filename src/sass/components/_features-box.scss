@@ -1,22 +1,81 @@
 .features-box {
-background-color: rgba($color-white, .8);
-font-size: 1.5rem;
-padding: 2.5rem;
-text-align: center;
-border-radius: 3px;
-box-shadow: 0 1.5rem 3rem rgba($color-black, .15);
-transition: transform 0.3s;
+    background-color: rgba($color-white, .8);
+    color: $color-black;
+    font-size: 1.5rem;
+    padding: 7rem 2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 3rem rgba($color-black, .15);
+    transition: transform 0.3s;
+    border-radius: 5px;
 
-
-
-    &__icon {
-        font-size: 6rem;
-        margin-bottom: 0.5px;
-        display: inline-block;
-        background-image: linear-gradient(to right, $color-primary-dark, $color-primary-light);
-        -webkit-background-clip: text;
-        color: transparent;
+    @include respond(tab-port) {
+        width: 40%;
+        margin: auto;
+        margin-bottom: 3rem;
     }
+    @include respond(phone) {
+        width: 70%;
+        margin: auto;
+        margin-bottom: 3rem;
+    }
+
+
+
+    &--first {
+        background-image: linear-gradient(
+            to right bottom, 
+            rgba($color-secondary-light, 0.7),
+            rgba($color-dark-grey-3, 0.7)), 
+            url(../img/img_1.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &--second {
+        background-image: linear-gradient(
+            to right bottom, 
+            rgba($color-secondary-light, 0.7),
+            rgba($color-dark-grey-3, 0.7)), 
+            url(../img/img_2.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &--third {
+        background-image: linear-gradient(
+            to right bottom, 
+            rgba($color-secondary-light, 0.7),
+            rgba($color-dark-grey-3, 0.7)), 
+            url(../img/img_3.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &--fourth {
+        background-image: linear-gradient(
+            to right bottom, 
+            rgba($color-secondary-light, 0.7),
+            rgba($color-dark-grey-3, 0.7)), 
+            url(../img/img_4.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+
+
+    // &__icon {
+    //     font-size: 6rem;
+    //     margin-bottom: 0.5px;
+    //     display: inline-block;
+    //     background-image: linear-gradient(to right, $color-primary-dark, $color-primary-light);
+    //     -webkit-background-clip: text;
+    //     color: transparent;
+    // }
 
     &:hover {
         transform: translateY(-3rem) scale(1.1);

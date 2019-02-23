@@ -1,13 +1,21 @@
 .card {
 
+    @include respond(tab-port) {
+        width: 60%;
+        margin: auto;
+        margin-bottom: 3rem;
+    }
+
+    @include respond(phone) {
+        width: 90%;
+    }
+
+
     //Functionality 
-perspective: 150rem;
--moz-perspective: 150rem;
-position: relative;
-height: 53rem;
-// transform: skewY(7deg);
-
-
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 53rem;
 
     &__side {
         position: absolute;
@@ -23,26 +31,29 @@ height: 53rem;
 
         &--front {
             background-color: $color-white;
-
         }
 
         &--back {
             transform: rotateY(180deg);
 
             &-1{
-                background-image: linear-gradient(to right bottom, $color-secondary-dark, $color-secondary-light);
+                background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.7), rgba($color-black, 0.7)), url(../img/bikini.jpg);
+                background-size: cover;
+                background-position: center;
             }
 
             &-2{
-                background-image: linear-gradient(to right bottom, $color-primary-dark, $color-primary-light);
+                background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.7), rgba($color-black, 0.7)), url(../img/middle.jpg);
+                background-size: cover;
+                background-position: center;
             }
 
             &-3{
-                background-image: linear-gradient(to right bottom, $color-tertiary-dark, $color-tertiary-light);
+                background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, 0.7), rgba($color-black, 0.7)), url(../img/hardcore.jpg);
+                background-size: cover;
+                background-position: center;
             }
-
         }
-
     }
 
     &:hover &__side--front {
@@ -51,11 +62,9 @@ height: 53rem;
     }
     &:hover &__side--back {
         transform: rotateY(0);
-
     }
 
     //Content
-
     &__picture {   
         background-size: cover;
         height: 23rem;
@@ -66,19 +75,16 @@ height: 53rem;
         border-top-right-radius: 10px;
         
         &--1{
-            background-image: linear-gradient(to right bottom, $color-secondary-dark, $color-secondary-light),
-            url(../img/nat-5.jpg);               
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.7), rgba($color-black, 0.7)), url(../img/bikini.jpg);
+            background-position: center;
         }
 
         &--2{
-            background-image: linear-gradient(to right bottom, $color-primary-dark, $color-primary-light),
-            url(../img/nat-6.jpg);               
-
+            background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.7), rgba($color-black, 0.7)), url(../img/middle.jpg);
         }
 
         &--3{
-            background-image: linear-gradient(to right bottom, $color-tertiary-dark, $color-tertiary-light),
-            url(../img/nat-7.jpg);               
+            background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, 0.7), rgba($color-black, 0.7)), url(../img/hardcore.jpg);
     
         }
 
@@ -122,6 +128,10 @@ height: 53rem;
 
     &__details {
         padding: 3rem;
+
+        @include respond(phone) {
+            padding: 1rem;
+        }
 
         ul {
             list-style: none;

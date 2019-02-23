@@ -2,7 +2,6 @@
 
     &__checkbox {
         display: none;
-
     }
 
     &__button {
@@ -12,12 +11,17 @@
         position: fixed;
         top: 6rem;
         right: 6rem;
-        background-color: $color-white;
+        background-color: $color-dark-grey-3;
         z-index: 2000;
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
         text-align: center;
         cursor: pointer;
 
+        @include respond(phone) {
+            background-color: rgba($color-dark-grey-3, 0.7);
+            top: 2rem;
+            right: 2rem;
+        }
     }
 
     &__background {
@@ -29,24 +33,26 @@
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark); 
         z-index: 1000;
-        -webkit-transition: transform .8s cubic-bezier(0.77, 0, 0.175, 1);
-        transition: transform .8s cubic-bezier(0.77, 0, 0.175, 1);
+        -webkit-transition: transform .6s cubic-bezier(0.77, 0, 0.175, 1);
+        transition: transform .6s cubic-bezier(0.77, 0, 0.175, 1);
 
-        // transform: scale(90);
+        @include respond(phone) {
+            top: 2.5rem;
+            right: 2.5rem;
+        }
 
     }
 
     &__nav {
-
+        display: none;
         height: 100vh;
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 1500;
-
         opacity: 0;
         width: 0;
         transition: all .8s;
+        z-index: 1500;
     }
 
     &__list {
@@ -57,7 +63,6 @@
         list-style: none;
         text-align: center;
         width: 100%;
-
     }
 
     &__item {
@@ -89,24 +94,21 @@
             background-position: 100%;
             color: $color-primary;
             transform: translateX(1rem);
-
         }
     }
 
-
     //Functionality
-
     &__checkbox:checked ~ &__background {
         transform: scale(90);
     }
 
     &__checkbox:checked ~ &__nav {
+        display: block;
         opacity: 1;
         width: 100%; 
     }
 
     //Icon
-
     &__icon {
         position: relative;
         margin-top: 3.5rem; 
@@ -116,7 +118,7 @@
         &::after {
             width: 3rem;
             height: 2px;
-            background-color: $color-dark-grey-3;
+            background-color: $color-white;
             display: inline-block;
         }
 
@@ -133,12 +135,12 @@
     }
 
     &__button:hover &__icon::before {
-        background-color: $color-black;
+        background-color: $color-white;
         top: -1.1rem;
     }
 
     &__button:hover &__icon::after {
-        background-color: $color-black;
+        background-color: $color-white;
         top: 1.1rem;
     }
     
@@ -157,7 +159,4 @@
         top: 0;
         transform: rotate(-135deg);
     }
-
-
-
 }
