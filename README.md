@@ -24,5 +24,7 @@ Methodologies:
 
 BEM, Atomic(partly).
 
+[GHPage locked here](https://yurasadilenko.github.io/ContentMania/dist/index.html)
+
 
 
